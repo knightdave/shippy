@@ -5,12 +5,11 @@ import (
 	pb "github.com/knightdave/shippy/vessel-service/proto/vessel"
 )
 
-// Our grpc service handler
 type handler struct {
 	repository
 }
 
-
+// FindAvailable vessels
 func (s *handler) FindAvailable(ctx context.Context, req *pb.Specification, res *pb.Response) error {
 
 	// Find the next available vessel
@@ -24,11 +23,11 @@ func (s *handler) FindAvailable(ctx context.Context, req *pb.Specification, res 
 	return nil
 }
 
+// Create a new vessel
 func (s *handler) Create(ctx context.Context, req *pb.Vessel, res *pb.Response) error {
 	if err := s.repository.Create(req); err != nil {
 		return err
 	}
 	res.Vessel = req
-	res.Created = true
 	return nil
 }
