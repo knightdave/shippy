@@ -36,6 +36,7 @@ func main() {
 	if uri == "" {
 		uri = defaultHost
 	}
+	uri = "mongodb://" + uri
 	client, err := CreateClient(uri)
 	if err != nil {
 		log.Panic(err)
