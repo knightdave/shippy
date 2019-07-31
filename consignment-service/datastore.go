@@ -1,4 +1,3 @@
-// shippy-service-consignment/datastore.go
 package main
 
 import (

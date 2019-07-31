@@ -165,6 +165,8 @@ github.com/knightdave/shippy/vessel-service v0.0.0-20190731121424-8d48875a3918 h
 github.com/knightdave/shippy/vessel-service v0.0.0-20190731121424-8d48875a3918/go.mod h1:o53u9IEJopzjRhCtc46EaExWyDkR5mnfFpF4P4DoeZ8=
 github.com/knightdave/shippy/vessel-service v0.0.0-20190731124240-c5842ca94236 h1:rrWYHPznnwaMVl3+Ie0NZRGoIQmdAhzbw02hCUlRtHU=
 github.com/knightdave/shippy/vessel-service v0.0.0-20190731124240-c5842ca94236/go.mod h1:5S44DCqmq5kp64tOAFzx4T71WQsLGdVdwASVbuvphwk=
+github.com/knightdave/shippy/vessel-service v0.0.0-20190731184419-c18eefc957a0 h1:JublFYpWkUYDcqOTeFE23t6ePhnBtSAoDU7+4Xuemtc=
+github.com/knightdave/shippy/vessel-service v0.0.0-20190731184419-c18eefc957a0/go.mod h1:4hY/jfsbtf2zBVTH9fgNj1HwCsvWyjEHi4gtu0J521o=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.2/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=
@@ -398,6 +400,7 @@ golang.org/x/tools v0.0.0-20190628153133-6cdbf07be9d0/go.mod h1:/rFqwRUd4F7ZHNgw
 golang.org/x/tools v0.0.0-20190711191110-9a621aea19f8/go.mod h1:jcCCGcm9btYwXyDqrUWc6MKQKKGJCWEQ3AfLSRIbEuI=
 golang.org/x/tools v0.0.0-20190729092621-ff9f1409240a/go.mod h1:jcCCGcm9btYwXyDqrUWc6MKQKKGJCWEQ3AfLSRIbEuI=
 golang.org/x/tools v0.0.0-20190730215328-ed3277de2799/go.mod h1:jcCCGcm9btYwXyDqrUWc6MKQKKGJCWEQ3AfLSRIbEuI=
+golang.org/x/tools v0.0.0-20190731163215-a81e99d7481f/go.mod h1:jcCCGcm9btYwXyDqrUWc6MKQKKGJCWEQ3AfLSRIbEuI=
 google.golang.org/api v0.4.0/go.mod h1:8k5glujaEP+g9n7WNsDg8QP6cUVNI86fCNMcbazEtwE=
 google.golang.org/api v0.7.0/go.mod h1:WtwebWUNSVBH/HAw79HIFXZNqEvBhG+Ra+ax0hx3E3M=
 google.golang.org/appengine v1.1.0/go.mod h1:EbEs0AVv82hx2wNQdGPgUI5lhzA/G0D9YwlJXL52JkM=
@@ -433,6 +436,7 @@ gopkg.in/src-d/go-billy.v4 v4.3.1/go.mod h1:tm33zBoOwxjYHZIE+OV8bxTWFMJLrconzFMd
 gopkg.in/src-d/go-billy.v4 v4.3.2/go.mod h1:nDjArDMp+XMs1aFAESLRjfGSgfvoYN0hDfzEk0GjC98=
 gopkg.in/src-d/go-git-fixtures.v3 v3.5.0/go.mod h1:dLBcvytrw/TYZsNTWCnkNF2DSIlzWYqTe3rJR56Ac7g=
 gopkg.in/src-d/go-git.v4 v4.12.0/go.mod h1:zjlNnzc1Wjn43v3Mtii7RVxiReNP0fIu9npcXKzuNp4=
+gopkg.in/src-d/go-git.v4 v4.13.0/go.mod h1:nx5NYcxdKxq5fpltdHnPa2Exj4Sx0EclMWZQbYDu2z8=
 gopkg.in/telegram-bot-api.v4 v4.6.4/go.mod h1:5DpGO5dbumb40px+dXcwCpcjmeHNYLpk0bp3XRNvWDM=
 gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7/go.mod h1:dt/ZhP58zS4L8KSrWDmTeBkI65Dw0HsyUHuEVlX15mw=
 gopkg.in/warnings.v0 v0.1.2/go.mod h1:jksf8JmL6Qr/oQM2OXTHunEvvTAsrWBLb6OOjuVWRNI=
