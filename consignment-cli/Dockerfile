@@ -1,8 +1,14 @@
-FROM golang:alpine as builder
+FROM golang:alpine as build_base
 RUN apk --no-cache add git
 WORKDIR /app/shippy-cli-consignment
-COPY . .
+ENV GO111MODULE=on
+COPY go.mod .
+COPY go.sum .
+
 RUN go mod download
+
+FROM build_base AS builder
+COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build  -o shippy-cli-consignment -a -installsuffix cgo .
 
 
