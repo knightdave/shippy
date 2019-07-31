@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"log"
 	"context"
+	"fmt"
+	"log"
+	"os"
 
 	pb "github.com/knightdave/shippy/vessel-service/proto/vessel"
 	"github.com/micro/go-micro"
@@ -24,7 +24,6 @@ func createDummyData(repo repository) {
 	}
 }
 
-
 func main() {
 	srv := micro.NewService(
 		micro.Name("shippy.service.vessel"),
@@ -36,7 +35,7 @@ func main() {
 	if uri == "" {
 		uri = defaultHost
 	}
-	client, err := CreateClient(uri)
+	client, err := CreateClient("mongodb://" + uri)
 	if err != nil {
 		log.Panic(err)
 	}
@@ -46,7 +45,6 @@ func main() {
 	repository := &VesselRepository{
 		vesselCollection,
 	}
-
 
 	// Register our implementation with
 	pb.RegisterVesselServiceHandler(srv.Server(), &handler{repository})
