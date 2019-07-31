@@ -28,7 +28,6 @@ func main() {
 	if uri == "" {
 		uri = defaultHost
 	}
-	uri = "mongodb://" + uri
 	client, err := CreateClient(uri)
 	if err != nil {
 		log.Panic(err)
@@ -38,7 +37,7 @@ func main() {
 	consignmentCollection := client.Database("shippy").Collection("consignments")
 
 	repository := &MongoRepository{consignmentCollection}
-	vesselClient := vesselProto.NewVesselServiceClient("shippy.service.vessel", srv.Client())
+	vesselClient := vesselProto.NewVesselServiceClient("shippy.service.client", srv.Client())
 	h := &handler{repository, vesselClient}
 
 	// Register handlers

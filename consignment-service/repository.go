@@ -1,9 +1,7 @@
-// shippy-service-consignment/repository.go
 package main
 
 import (
 	"context"
-
 	pb "github.com/knightdave/shippy/consignment-service/proto/consignment"
 	"go.mongodb.org/mongo-driver/mongo"
 )
