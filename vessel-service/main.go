@@ -49,6 +49,8 @@ func main() {
 	// Register our implementation with
 	pb.RegisterVesselServiceHandler(srv.Server(), &handler{repository})
 
+	createDummyData(repository)
+
 	if err := srv.Run(); err != nil {
 		fmt.Println(err)
 	}

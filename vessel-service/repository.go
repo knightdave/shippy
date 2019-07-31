@@ -5,6 +5,7 @@ import (
 	pb "github.com/knightdave/shippy/vessel-service/proto/vessel"
 	"go.mongodb.org/mongo-driver/mongo"
 	"gopkg.in/mgo.v2/bson"
+	"log"
 
 )
 
@@ -21,6 +22,7 @@ type VesselRepository struct {
 // if capacity and max weight are below a vessels capacity and max weight,
 // then return that vessel.
 func (repository *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.Vessel, error) {
+	log.Printf("BSON")
 	filter := bson.D{{
 		"capacity",
 		bson.D{{
@@ -32,6 +34,7 @@ func (repository *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.V
 		}},
 	}}
 	var vessel *pb.Vessel
+	log.Printf("Looking for one vessel")
 	if err := repository.collection.FindOne(context.TODO(), filter).Decode(&vessel); err != nil {
 		return nil, err
 	}
@@ -40,6 +43,7 @@ func (repository *VesselRepository) FindAvailable(spec *pb.Specification) (*pb.V
 
 // Create a new vessel
 func (repository *VesselRepository) Create(vessel *pb.Vessel) error {
+	log.Printf("Creating vessel")
 	_, err := repository.collection.InsertOne(context.TODO(), vessel)
 	return err
 }
