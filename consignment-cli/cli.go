@@ -59,4 +59,5 @@ func main() {
 	for _, v := range getAll.Consignments {
 		log.Println(v)
 	}
+	
 }

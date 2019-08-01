@@ -18,10 +18,15 @@ services:
   #   ports:
   #     - 5432:5432
 
-  consignment-cli:
-    build: ./consignment-cli
+  shippy-service-vessel:
+    build: ./vessel-service
+    ports:
+      - 50052:50051
+    environment:
+      MICRO_ADDRESS: ":50051"
+      DB_HOST: "datastore:27017"
 
-  consignment-service:
+  shippy-service-consignment:
     build: ./consignment-service
     ports:
       - 50051:50051
@@ -29,10 +34,5 @@ services:
       MICRO_ADDRESS: ":50051"
       DB_HOST: "datastore:27017"
 
-  vessel-service:
-    build: ./vessel-service
-    ports:
-      - 50052:50051
-    environment:
-      MICRO_ADDRESS: ":50051"
-      DB_HOST: "datastore:27017"
+  shippy-service-consignment-cli:
+    build: ./consignment-cli
