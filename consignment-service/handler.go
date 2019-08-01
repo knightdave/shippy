@@ -13,7 +13,6 @@ type handler struct {
 	vesselClient vesselProto.VesselServiceClient
 }
 
-
 // CreateConsignment - we created just one method on our service,
 // which is a create method, which takes a context and a request as an
 // argument, these are handled by the gRPC server.
@@ -23,12 +22,12 @@ func (s *handler) CreateConsignment(ctx context.Context, req *pb.Consignment, re
 	// and the amount of containers as the capacity value
 	vesselResponse, err := s.vesselClient.FindAvailable(ctx, &vesselProto.Specification{
 		MaxWeight: req.Weight,
-		Capacity: int32(len(req.Containers)),
+		Capacity:  int32(len(req.Containers)),
 	})
-	log.Printf("Found vessel: %s \n", vesselResponse.Vessel.Name)
 	if err != nil {
 		return err
 	}
+	log.Printf("Found vessel: %s \n", vesselResponse.Vessel.Name)
 
 	// We set the VesselId as the vessel we got back from our
 	// vessel service
