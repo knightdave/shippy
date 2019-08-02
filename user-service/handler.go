@@ -1,13 +1,14 @@
 package main
 
 import (
-	"golang.org/x/net/context"
+	"context"
+
 	pb "github.com/knightdave/shippy/user-service/proto/user"
 )
 
 type service struct {
 	repo Repository
-	tokenService Authable
+	//tokenService Authable
 }
 
 func (srv *service) Get(ctx context.Context, req *pb.User, res *pb.Response) error {
