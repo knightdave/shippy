@@ -8,6 +8,7 @@ require (
 	github.com/micro/go-micro v1.8.1
 	github.com/nats-io/jwt v0.2.12 // indirect
 	github.com/nats-io/nats-server/v2 v2.0.2 // indirect
+	github.com/tidwall/pretty v1.0.0 // indirect
 	go.mongodb.org/mongo-driver v1.0.4
 	golang.org/x/net v0.0.0-20190724013045-ca1201d0de80
 )

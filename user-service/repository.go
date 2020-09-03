@@ -1,8 +1,9 @@
 package main
 
 import (
-	pb "github.com/EwanValentine/shippy/user-service/proto/user"
 	"github.com/jinzhu/gorm"
+	//"github.com/dgrijalva/jwt-go"
+	pb "github.com/knightdave/shippy/user-service/proto/user"
 )
 
 type Repository interface {
@@ -44,4 +45,5 @@ func (repo *UserRepository) Create(user *pb.User) error {
 	if err := repo.db.Create(user).Error; err != nil {
 		return err
 	}
+	return nil
 }

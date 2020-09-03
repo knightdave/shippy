@@ -1,0 +1,27 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "consignment-service_lib",
+    srcs = [
+        "datastore.go",
+        "handler.go",
+        "main.go",
+        "repository.go",
+    ],
+    importpath = "github.com/knightdave/shippy/consignment-service",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//consignment-service/proto/consignment",
+        "//vessel-service/proto/vessel",
+        "@com_github_micro_go_micro//:go_default_library",
+        "@org_mongodb_go_mongo_driver//bson:go_default_library",
+        "@org_mongodb_go_mongo_driver//mongo:go_default_library",
+        "@org_mongodb_go_mongo_driver//mongo/options:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "consignment-service",
+    embed = [":consignment-service_lib"],
+    visibility = ["//visibility:public"],
+)

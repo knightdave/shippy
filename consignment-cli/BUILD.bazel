@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "consignment-cli_lib",
+    srcs = ["cli.go"],
+    importpath = "github.com/knightdave/shippy/consignment-cli",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//consignment-service/proto/consignment",
+        "@com_github_micro_go_micro//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "consignment-cli",
+    embed = [":consignment-cli_lib"],
+    visibility = ["//visibility:public"],
+)

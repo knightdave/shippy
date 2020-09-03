@@ -1,0 +1,22 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "user-cli_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/knightdave/shippy/user-cli",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//user-service/proto/user",
+        "@com_github_micro_cli//:go_default_library",
+        "@com_github_micro_go_micro//:go_default_library",
+        "@com_github_micro_go_micro//client:go_default_library",
+        "@com_github_micro_go_micro//cmd:go_default_library",
+        "@org_golang_x_net//context:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "user-cli",
+    embed = [":user-cli_lib"],
+    visibility = ["//visibility:public"],
+)
